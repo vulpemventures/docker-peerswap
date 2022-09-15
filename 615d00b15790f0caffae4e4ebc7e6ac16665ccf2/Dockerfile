@@ -21,8 +21,7 @@ RUN adduser --disabled-password \
             "$USER"
 USER $USER
 
-COPY --from=builder /app/peerswap/out/peerswapd /usr/local/bin/
-COPY --from=builder /app/peerswap/out/pscli /usr/local/bin/
+COPY --from=builder /app/peerswap/out/* /usr/local/bin/
 
 
 # Prevents `VOLUME $DIR/.peerswap/` being created as owned by `root`
