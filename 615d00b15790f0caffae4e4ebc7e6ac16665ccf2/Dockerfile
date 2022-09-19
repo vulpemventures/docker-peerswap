@@ -5,7 +5,7 @@ WORKDIR /app
 ARG COMMIT=615d00b15790f0caffae4e4ebc7e6ac16665ccf2
 
 RUN set -ex \
-	&& git clone https://github.com/ElementsProject/peerswap && cd peerswap && git checkout ${COMMIT} \
+	&& git clone https://github.com/vulpemventures/peerswap && cd peerswap && git checkout ${COMMIT} \
 	&& make -j$(nproc) build
 
 FROM debian:buster-slim
